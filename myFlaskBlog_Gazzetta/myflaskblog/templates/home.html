@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    {% for post in posts %}
+
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="{{ url_for('flt_posts' , user_username = post.author.username) }}">{{post.author.get_username()}}</a>
+                  <small class="text-muted">{{ post.role }}</small>
+                </div>
+                <h2><a class="article-title" href="{{ url_for('post', id = post.id)}}">{{ post.champion }} vs {{ post.enemy }}</a></h2>
+                <p class="article-patch">Patch: {{post.patch}}</p>
+                
+                
+              </div>
+            </article>
+
+    {% endfor %}
+{% endblock content %}
+<!--{{ post.user_id }}-->
+
+
+
+
+

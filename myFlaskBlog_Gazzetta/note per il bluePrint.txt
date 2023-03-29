@@ -1,0 +1,15 @@
+i post sono ordinati al contrario
+metodo paginate
+
+
+per creare il blueprint in sintesi:
+- copiare le cose dai file unici a file nelle varie cartelle
+- cambiare i vari import
+- creare i vari oggetti Blueprint
+- cambiare gli app.route in *oggettoBlueprint*.route
+- nei file html modificare tutti i url_for aggiungendo *classe*.*pagina*
+- modificare __init__ (andare su lezione 8 per ricordarsi come)
+	-- creare il file config.py con le costanti
+	-- invece che importare app creare la funzione che la crea
+	--etc...
+- modificare run.py (andare su lezione 8 per ricordarsi come)

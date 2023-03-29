@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    
+
+            <article class="media content-section">
+              <div class="media-body">
+                
+                <div class="article-metadata">
+                  <a href="{{  url_for('other_user_account' , user_username = post.author.username, id=post.id) }}",><img class="rounded-circle account-img",  src={{ image_file }}></a>
+                  <a class="mr-2" , id="enemies">{{ post.title}}</a>
+                  <small class="text-muted" id="role">{{ post.role }}</small>
+                </div>
+                <h2><a class="article-title">{{ post.champion }} vs {{ post.enemy }}</a></h2>
+                <p class="article-patch">Patch: {{post.patch}}</p>
+                <p class="article-content">{{ post.post_content|safe }}</p>
+                
+              </div>
+            </article>
+            <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('home') }}">Back</a>
+            {% if current_user.is_authenticated and current_user.id == post.user_id %}
+            <a class="btn btn-outline-info btn-sm" href="{{ url_for('update_post', id = post.id)}}">Edit</a>
+            <a class="btn btn-outline-danger btn-sm" href="{{ url_for('delete_post', id = post.id)}}">Delete</a>
+            {% endif %}
+    
+{% endblock content %}
+
+
+
+
+
+
